@@ -18,10 +18,17 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call([
-            CompanySeeder::class,
-            TaskSeeder::class,
-            UserSeeder::class,
+            CompanySeeder::class
+        ]);        
+
+        $this->call([
+            ProfileSeeder::class
         ]);
+
+        $this->call([
+            TaskSeeder::class
+        ]);
+
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

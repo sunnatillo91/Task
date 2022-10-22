@@ -18,7 +18,8 @@ class TaskFactory extends Factory
     {
         return [
             'name' =>$this->faker->company,
-            'deadline' => $this->faker->date,
+            // 'status' =>$this->true,
+            'deadline' => $this->faker->date
         ];
     }
 }

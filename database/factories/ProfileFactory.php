@@ -2,12 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Models\Company;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Company>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Profile>
  */
-class CompanyFactory extends Factory
+class ProfileFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,11 +18,11 @@ class CompanyFactory extends Factory
     public function definition()
     {
         return [
-            'name' =>$this->faker->company,
-            'status' =>$this->faker->numberBetween(1,3),
+            'name' =>$this->faker->name,
             'phone' => $this->faker->e164PhoneNumber,
             'address' => $this->faker->address,
-            'creator' => $this->faker->name,
+            'gender' => $this->faker->numberBetween(1,2),
+            'company_id' => $this->faker->numberBetween(1,(int)Company::count()),
         ];
     }
 }
