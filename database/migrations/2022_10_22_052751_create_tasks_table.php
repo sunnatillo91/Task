@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreign('company_id')->references('company_id')->on('companies')->onDelete('cascade');
             $table->string('name');
             $table->string('status');
-            $table->date('deadline');
+            $table->date('deadline')->nullable();
             $table->timestamps();
         });
     }

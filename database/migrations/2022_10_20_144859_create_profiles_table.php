@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('phone');
             $table->string('address');
-            $table->string('gender');
+            $table->text('gender');
             // $table->foreignId('company_id')->constrained();
             $table->timestamps();
         });

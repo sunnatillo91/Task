@@ -21,7 +21,7 @@ class ProfileFactory extends Factory
             'name' =>$this->faker->name,
             'phone' => $this->faker->e164PhoneNumber,
             'address' => $this->faker->address,
-            'gender' => $this->faker->numberBetween(1,2),
+            'gender' => $this->faker->numberBetween(1,5),
             'company_id' => $this->faker->numberBetween(1,(int)Company::count()),
         ];
     }
