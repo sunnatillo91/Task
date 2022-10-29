@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
-use Controller;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\ProfileResource;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 
-class ProfileController extends \Illuminate\Routing\Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +16,8 @@ class ProfileController extends \Illuminate\Routing\Controller
      */
     public function index()
     {
-        return Profile::all();
+        // return Profile::all();
+        return ProfileResource::collection(Profile::all());
     }
 
     /**
@@ -37,7 +39,8 @@ class ProfileController extends \Illuminate\Routing\Controller
      */
     public function show($profile_id)
     {
-        return Profile::find($profile_id);
+        // return Profile::findOrFail($profile_id);
+        return new ProfileResource(Profile::findOrFail($profile_id)); 
     }
 
     /**

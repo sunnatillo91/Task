@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\CompanyResource;
-use App\Models\Company;
+use App\Models\Task;
 use Illuminate\Http\Request;
 
-class CompanyController extends Controller
+class TaskController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        // return Company::all();
-        return CompanyResource::collection(Company::all());
+        return Task::all();
     }
 
     /**
@@ -37,9 +35,9 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($company_id)
+    public function show($id)
     {
-        return new CompanyResource(Company::findOrFail($company_id)); 
+        //
     }
 
     /**

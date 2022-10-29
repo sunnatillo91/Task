@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\Api\CompanyController;
-use App\Http\Controllers\Api\ProfileController as ApiProfileController;
-use App\Http\Controllers\ProfileController;
+
+use App\Http\Controllers\Api\ProfileController;
+use App\Http\Controllers\Api\TaskController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,5 +27,9 @@ Route::resources([
 ]);
 
 Route::resources([
-    '/profiles' => ApiProfileController::class
+    '/profiles' => ProfileController::class
 ]);
+
+// Route::resources([
+//     '/tasks' => TaskController::class
+// ]);
