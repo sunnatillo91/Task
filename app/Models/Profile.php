@@ -12,6 +12,11 @@ class Profile extends Model
 
     protected $primaryKey = 'profile_id';
 
+    protected $fillable = [
+        'company_id',
+        'name'
+    ];
+
     public function lists(){
         return $this->hasMany(Profile::class);
     }
